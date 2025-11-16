@@ -57,6 +57,30 @@ Prompt estruturado para conduzir entrevista interativa e gerar um FDD (Feature D
 
 Prompt estruturado para conduzir entrevista interativa e gerar um PRD (Product Requirements Document) completo e acionável. O assistente guia o usuário através de perguntas objetivas, captura requisitos funcionais e não funcionais, arquitetura, riscos e critérios de aceitação. Ao final, gera o PRD em formato Markdown padronizado e opcionalmente em JSON estruturado.
 
+### Systems Auditor
+
+Sistema multi-agente para auditoria completa de projetos. Coordena agentes especializados para produzir snapshot auditável do estado do projeto incluindo dependências, arquitetura e componentes.
+
+#### [Orchestrator Agent](./prompts/Systems%20Auditor/agents/orchestrator.md)
+
+Agente orquestrador que mantém o MANIFEST.md como fonte única de verdade, gerencia estrutura de diretórios, registra outputs de agentes especialistas e garante cobertura completa de componentes. Atua sob coordenação do Claude Code sem invocar subagentes diretamente.
+
+#### [Dependency Auditor Agent](./prompts/Systems%20Auditor/agents/dependency-auditor.md)
+
+Agente especializado em análise de dependências do projeto. Identifica bibliotecas, frameworks, versões, vulnerabilidades e produz relatório detalhado sobre o grafo de dependências e riscos associados.
+
+#### [Architectural Analyzer Agent](./prompts/Systems%20Auditor/agents/architectural-analyzer.md)
+
+Agente especializado em análise arquitetural do projeto. Documenta padrões arquiteturais, componentes principais, fluxos de dados, decisões técnicas e produz visão estrutural completa do sistema.
+
+#### [Component Deep Analyzer Agent](./prompts/Systems%20Auditor/agents/component-deep-analyzer.md)
+
+Agente especializado em análise profunda de componentes individuais. Para cada componente, documenta responsabilidades, interfaces, dependências internas/externas e características técnicas específicas.
+
+#### [Run Project State Full Report Command](./prompts/Systems%20Auditor/commands/run-project-state-full-report.md)
+
+Comando para executar auditoria completa do projeto. Coordena os quatro agentes (orchestrator, dependency-auditor, architectural-analyzer, component-deep-analyzer) e gera README consolidado com índice de todos os relatórios produzidos.
+
 ## 📚 Exemplos de Documentação
 
 Exemplos práticos de documentação técnica, PRDs e especificações demonstrando boas práticas.
