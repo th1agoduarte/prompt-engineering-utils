@@ -35,6 +35,16 @@ Agente especializado em gerar diagramas C4 (System Context, Container, Component
 
 Comando para invocar o agente c4-diagram-generator. Aceita caminho do FDD, pasta de output opcional e flag --no-images para controlar geração de PNGs. Gera arquivos .puml separados para cada diagrama e arquivo .md com análise.
 
+### Diagramas Mermaid
+
+#### [Mermaid Diagram Generator (Subagent)](./prompts/Diagramas%20Mermaid/Subagent/mermaid-diagram-generator.md)
+
+Agente especializado em gerar diagramas Mermaid técnicos a partir de Feature Design Documents (FDD). Cria diagramas focados em significância (fluxos principais, decisões arquiteturais, contratos públicos) com detecção automática de idioma e ortografia correta. Gera tipicamente 6-8 diagramas de alta qualidade em um documento markdown autocontido.
+
+#### [Generate Mermaid Command](./prompts/Diagramas%20Mermaid/Command/generate-mermaid.md)
+
+Comando para invocar o agente mermaid-diagram-generator. Aceita caminho do FDD e pasta de output opcional. Gera um arquivo markdown único com múltiplos diagramas Mermaid (Sequence, Flowchart, Class, ER) priorizados por relevância e impacto na compreensão do sistema.
+
 ### Feature Design Document (FDD)
 
 #### [Entrevista para Geração de FDD](./prompts/Feature%20Design%20Document%20%28FDD%29/Entrevista_Prompt_para_Geração_de_FDD_%28Feature_Design_Doc%29.md)
@@ -72,6 +82,12 @@ High-Level Design completo de um SDK de Rate Limiter em Go. Documenta arquitetur
 #### [Diagramas C4: Rate Limiter](./Exemple/docs/Diagramas%20C4/Diagramas%20C4%20-%20Rate%20Limiter.md)
 
 Conjunto completo de diagramas C4 (System Context, Container, Component e Code) em PlantUML para o SDK de Rate Limiter. Demonstra visualização em múltiplos níveis de abstração da arquitetura, desde contexto de sistema até detalhes de implementação de componentes.
+
+### Diagramas Mermaid
+
+#### [Diagramas Mermaid: Rate Limiter](./Exemple/docs/Diagramas%20Mermaid/Diagramas%20Mermaid%20-%20Rate%20Limiter.md)
+
+Coleção de diagramas Mermaid técnicos para o SDK de Rate Limiter. Inclui diagramas de sequência para fluxos principais, flowcharts para algoritmos (Fixed Window, Token Bucket), diagramas de classe para contratos públicos e visualizações de decisões arquiteturais. Demonstra como ilustrar comportamento do sistema com foco em significância e clareza.
 
 ### Feature Design Documents (FDD)
 
