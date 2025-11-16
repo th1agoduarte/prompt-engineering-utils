@@ -13,6 +13,10 @@ A collection of utilities and templates for improving my daily work in prompt en
 
 Prompts prontos para uso em diferentes contextos de desenvolvimento e documentação.
 
+### [Entrevista para Geração de FDD](./prompts/Feature%20Design%20Document%20%28FDD%29/Entrevista_Prompt_para_Geração_de_FDD_%28Feature_Design_Doc%29.md)
+
+Prompt estruturado para conduzir entrevista interativa e gerar um FDD (Feature Design Doc) técnico e acionável. O FDD descreve como implementar uma feature específica no contexto do HLD, detalhando fluxos, contratos públicos, observabilidade, critérios de aceite técnicos, riscos e compatibilidade. Foca no comportamento técnico verificável da feature, sem repetir a narrativa de negócio do PRD.
+
 ### [Entrevista para Geração de HLD](./prompts/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/Entrevista_para_geracao_de_um_HLD.md)
 
 Prompt estruturado para conduzir entrevista interativa e gerar um HLD (High-Level Design) técnico e acionável. Guia o usuário através de perguntas objetivas sobre arquitetura geral, componentes, fluxos de dados, modelo de dados, interfaces públicas, escalabilidade, segurança e observabilidade. Foca no "como" técnico da solução, sem repetir narrativa de negócio do PRD.
@@ -34,6 +38,12 @@ Guia de referência classificando tipos de documentação técnica por categoria
 #### [HLD: Rate Limiter](./Exemple/docs/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/HLD%20%28Rate%20Limiter%29.md)
 
 High-Level Design completo de um SDK de Rate Limiter em Go. Documenta arquitetura geral, componentes, estratégias de limitação (Janela Fixa e Token Bucket), integração com Redis Cluster e modo in-memory, observabilidade e decisões técnicas. Exemplo prático de como documentar soluções de infraestrutura com foco em performance e resiliência.
+
+### Feature Design Documents (FDD)
+
+#### [FDD: Rate Limiter](./Exemple/docs/Feature%20Design%20Document%20%28FDD%29/Feature%20Design%20Doc%20-%20Rate%20Limiter.md)
+
+Feature Design Doc detalhado para implementação de SDK de Rate Limiter em Go. Documenta objetivos técnicos, escopo, fluxos principais (Check API e middleware HTTP), estratégias (Janela Fixa e Token Bucket), integração com Redis Cluster e modo in-memory, telemetria nativa, e critérios de aceite técnicos. Exemplo prático de como especificar implementação técnica de componentes de infraestrutura.
 
 ### PRDs (Product Requirements Documents)
 
