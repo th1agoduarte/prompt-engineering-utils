@@ -13,6 +13,10 @@ A collection of utilities and templates for improving my daily work in prompt en
 
 Prompts prontos para uso em diferentes contextos de desenvolvimento e documentação.
 
+### [Entrevista para Geração de HLD](./prompts/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/Entrevista_para_geracao_de_um_HLD.md)
+
+Prompt estruturado para conduzir entrevista interativa e gerar um HLD (High-Level Design) técnico e acionável. Guia o usuário através de perguntas objetivas sobre arquitetura geral, componentes, fluxos de dados, modelo de dados, interfaces públicas, escalabilidade, segurança e observabilidade. Foca no "como" técnico da solução, sem repetir narrativa de negócio do PRD.
+
 ### [Entrevista para Gerar PRD de Feature](./prompts/PRD%20de%20Feature/Entrevista_para_Gerar_PRD_para_desenvolvimento_de_Feature.md)
 
 Prompt estruturado para conduzir entrevista interativa e gerar um PRD (Product Requirements Document) completo e acionável. O assistente guia o usuário através de perguntas objetivas, captura requisitos funcionais e não funcionais, arquitetura, riscos e critérios de aceitação. Ao final, gera o PRD em formato Markdown padronizado e opcionalmente em JSON estruturado.
@@ -21,15 +25,23 @@ Prompt estruturado para conduzir entrevista interativa e gerar um PRD (Product R
 
 Exemplos práticos de documentação técnica, PRDs e especificações demonstrando boas práticas.
 
-### [Classificação Geral de Documentos](./Exemple/classificao.md)
+### [Classificação Geral de Documentos](./Exemple/Classificação%20geral%20de%20documentos.md)
 
-Guia de referência classificando tipos de documentação técnica por categoria e relevância. Inclui documentos modernos (PRD, HLD, FDD, ADR, RFC), documentos operacionais (Runbooks, Playbooks) e documentos legados ou em desuso.
+Guia de referência classificando tipos de documentação técnica por categoria e relevância. Inclui documentos modernos (PRD, HLD, FDD, ADR, RFC), documentos operacionais (Runbooks, Playbooks) e documentos emergentes (AI Design Docs, Observability Docs). Distingue entre documentação relevante, emergente, secundária e legada.
 
-### [Exemplo: Catálogo de eCommerce](./Exemple/docs/prd/Exemplo%20de%20PRD%20para%20Feature%20%28Cat%C3%A1logo%20de%20eCommerce%29.md)
+### Design e Arquitetura
+
+#### [HLD: Rate Limiter](./Exemple/docs/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/HLD%20%28Rate%20Limiter%29.md)
+
+High-Level Design completo de um SDK de Rate Limiter em Go. Documenta arquitetura geral, componentes, estratégias de limitação (Janela Fixa e Token Bucket), integração com Redis Cluster e modo in-memory, observabilidade e decisões técnicas. Exemplo prático de como documentar soluções de infraestrutura com foco em performance e resiliência.
+
+### PRDs (Product Requirements Documents)
+
+#### [PRD: Catálogo de eCommerce](./Exemple/docs/prd/Exemplo%20de%20PRD%20para%20Feature%20%28Catálogo%20de%20eCommerce%29.md)
 
 PRD completo demonstrando a documentação de uma feature de catálogo de produtos para e-commerce. Inclui gestão de produtos, SKUs, variações, preço, estoque, APIs de leitura e painel administrativo. Exemplo prático de como documentar requisitos de negócio complexos, integrações e critérios de aceitação.
 
-### [Exemplo: Rate Limiter](./Exemple/docs/prd/Exemplo%20para%20Feature%20%28Rate%20Limiter%29.md)
+#### [PRD: Rate Limiter](./Exemple/docs/prd/Exemplo%20para%20Feature%20%28Rate%20Limiter%29.md)
 
 PRD demonstrando a documentação de um sistema de Rate Limiter centralizado. Implementado como SDK em Go com suporte a Redis Cluster e modo in-memory. Exemplo de como documentar componentes de infraestrutura crítica, requisitos não funcionais e estratégias de resiliência.
 
@@ -37,11 +49,11 @@ PRD demonstrando a documentação de um sistema de Rate Limiter centralizado. Im
 
 Comandos personalizados disponíveis para uso com Claude Code CLI.
 
-### [/commit](./claude/commands/commit.md)
+### [/commit](./.claude/commands/commit.md)
 
 Comando para criar commits convencionais seguindo o padrão Conventional Commits. Analisa automaticamente as mudanças no repositório, determina o tipo apropriado (feat, fix, docs, etc.) e gera mensagens de commit claras e profissionais com descrição e corpo explicativo.
 
-### [/update-readme](./claude/commands/update-readme.md)
+### [/update-readme](./.claude/commands/update-readme.md)
 
 Comando para atualizar automaticamente o README.md do repositório. Escaneia as pastas de prompts, exemplos e comandos, organiza por categorias e gera links com descrições extraídas do conteúdo dos arquivos.
 
@@ -72,13 +84,17 @@ Se você está usando [Claude Code](https://github.com/anthropics/claude-code):
 ```
 .
 ├── .claude/
-│   └── commands/          # Comandos personalizados do Claude Code
-├── prompts/               # Prompts reutilizáveis organizados por categoria
-│   └── PRD de Feature/    # Prompts para geração de PRDs
-├── Exemple/               # Exemplos de documentação
+│   └── commands/                    # Comandos personalizados do Claude Code
+├── prompts/                         # Prompts reutilizáveis organizados por categoria
+│   ├── PRD de Feature/              # Prompts para geração de PRDs
+│   └── Design e Arquitetura/
+│       └── High Level Document (HLD)/ # Prompts para geração de HLDs
+├── Exemple/                         # Exemplos de documentação
 │   └── docs/
-│       └── prd/          # Exemplos de PRDs completos
-└── README.md             # Este arquivo
+│       ├── prd/                     # Exemplos de PRDs completos
+│       └── Design e Arquitetura/
+│           └── High Level Document (HLD)/ # Exemplos de HLDs completos
+└── README.md                        # Este arquivo
 ```
 
 ## 🤝 Contribuindo
