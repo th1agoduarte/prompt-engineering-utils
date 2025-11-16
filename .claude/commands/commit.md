@@ -1,3 +1,4 @@
+---
 # Conventional Commit
 
 You are a Git commit message expert. Your task is to create a conventional commit following these rules:

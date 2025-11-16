@@ -13,15 +13,37 @@ A collection of utilities and templates for improving my daily work in prompt en
 
 Prompts prontos para uso em diferentes contextos de desenvolvimento e documentação.
 
-### [Entrevista para Geração de FDD](./prompts/Feature%20Design%20Document%20%28FDD%29/Entrevista_Prompt_para_Geração_de_FDD_%28Feature_Design_Doc%29.md)
+### Deep Research
 
-Prompt estruturado para conduzir entrevista interativa e gerar um FDD (Feature Design Doc) técnico e acionável. O FDD descreve como implementar uma feature específica no contexto do HLD, detalhando fluxos, contratos públicos, observabilidade, critérios de aceite técnicos, riscos e compatibilidade. Foca no comportamento técnico verificável da feature, sem repetir a narrativa de negócio do PRD.
+#### [Prompt para Geração de Deep Research (Fase 1)](./prompts/Deep%20Research/Prompt_para%20geracao_de_uma_Deep_Research_%28Fase_1%29.md)
 
-### [Entrevista para Geração de HLD](./prompts/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/Entrevista_para_geracao_de_um_HLD.md)
+Prompt para conduzir entrevista curta e adaptativa (máximo 6 perguntas) para entender o tema técnico, contexto, foco e expectativas do usuário. Gera um resumo estruturado que serve como briefing para execução posterior da Deep Research. Esta fase não gera a pesquisa técnica, apenas estrutura o contexto necessário.
+
+### Design e Arquitetura
+
+#### [Entrevista para Geração de HLD](./prompts/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/Entrevista_para_geracao_de_um_HLD.md)
 
 Prompt estruturado para conduzir entrevista interativa e gerar um HLD (High-Level Design) técnico e acionável. Guia o usuário através de perguntas objetivas sobre arquitetura geral, componentes, fluxos de dados, modelo de dados, interfaces públicas, escalabilidade, segurança e observabilidade. Foca no "como" técnico da solução, sem repetir narrativa de negócio do PRD.
 
-### [Entrevista para Gerar PRD de Feature](./prompts/PRD%20de%20Feature/Entrevista_para_Gerar_PRD_para_desenvolvimento_de_Feature.md)
+### Diagramas C4
+
+#### [C4 Diagram Generator (Subagent)](./prompts/Diagramas%20C4/Subagent/c4-diagram-generator.md)
+
+Agente especializado em gerar diagramas C4 (System Context, Container, Component e Code) em formato PlantUML a partir de Feature Design Documents (FDD). Detecta automaticamente o idioma do FDD e gera diagramas com ortografia correta, mantendo termos técnicos em inglês.
+
+#### [Generate C4 Command](./prompts/Diagramas%20C4/Command/generate-c4.md)
+
+Comando para invocar o agente c4-diagram-generator. Aceita caminho do FDD, pasta de output opcional e flag --no-images para controlar geração de PNGs. Gera arquivos .puml separados para cada diagrama e arquivo .md com análise.
+
+### Feature Design Document (FDD)
+
+#### [Entrevista para Geração de FDD](./prompts/Feature%20Design%20Document%20%28FDD%29/Entrevista_Prompt_para_Geração_de_FDD_%28Feature_Design_Doc%29.md)
+
+Prompt estruturado para conduzir entrevista interativa e gerar um FDD (Feature Design Doc) técnico e acionável. O FDD descreve como implementar uma feature específica no contexto do HLD, detalhando fluxos, contratos públicos, observabilidade, critérios de aceite técnicos, riscos e compatibilidade. Foca no comportamento técnico verificável da feature, sem repetir a narrativa de negócio do PRD.
+
+### PRD de Feature
+
+#### [Entrevista para Gerar PRD de Feature](./prompts/PRD%20de%20Feature/Entrevista_para_Gerar_PRD_para_desenvolvimento_de_Feature.md)
 
 Prompt estruturado para conduzir entrevista interativa e gerar um PRD (Product Requirements Document) completo e acionável. O assistente guia o usuário através de perguntas objetivas, captura requisitos funcionais e não funcionais, arquitetura, riscos e critérios de aceitação. Ao final, gera o PRD em formato Markdown padronizado e opcionalmente em JSON estruturado.
 
@@ -33,11 +55,23 @@ Exemplos práticos de documentação técnica, PRDs e especificações demonstra
 
 Guia de referência classificando tipos de documentação técnica por categoria e relevância. Inclui documentos modernos (PRD, HLD, FDD, ADR, RFC), documentos operacionais (Runbooks, Playbooks) e documentos emergentes (AI Design Docs, Observability Docs). Distingue entre documentação relevante, emergente, secundária e legada.
 
+### Deep Research
+
+#### [Research Document: Rate Limiter](./Exemple/docs/Deep%20Research/Research%20Document%20-%20Rate%20Limiter.md)
+
+Documento de pesquisa técnica aprofundada sobre rate limiting em microserviços multi-tenant. Explora estratégias clássicas (fixed window, sliding window, token bucket, leaky bucket, GCRA), implementações em Go, integração com Redis e memória local, isolamento por tenant/tier, e boas práticas de observabilidade e testes.
+
 ### Design e Arquitetura
 
 #### [HLD: Rate Limiter](./Exemple/docs/Design%20e%20Arquitetura/High%20Level%20Document%20%28HLD%29/HLD%20%28Rate%20Limiter%29.md)
 
 High-Level Design completo de um SDK de Rate Limiter em Go. Documenta arquitetura geral, componentes, estratégias de limitação (Janela Fixa e Token Bucket), integração com Redis Cluster e modo in-memory, observabilidade e decisões técnicas. Exemplo prático de como documentar soluções de infraestrutura com foco em performance e resiliência.
+
+### Diagramas C4
+
+#### [Diagramas C4: Rate Limiter](./Exemple/docs/Diagramas%20C4/Diagramas%20C4%20-%20Rate%20Limiter.md)
+
+Conjunto completo de diagramas C4 (System Context, Container, Component e Code) em PlantUML para o SDK de Rate Limiter. Demonstra visualização em múltiplos níveis de abstração da arquitetura, desde contexto de sistema até detalhes de implementação de componentes.
 
 ### Feature Design Documents (FDD)
 
@@ -62,6 +96,10 @@ Comandos personalizados disponíveis para uso com Claude Code CLI.
 ### [/commit](./.claude/commands/commit.md)
 
 Comando para criar commits convencionais seguindo o padrão Conventional Commits. Analisa automaticamente as mudanças no repositório, determina o tipo apropriado (feat, fix, docs, etc.) e gera mensagens de commit claras e profissionais com descrição e corpo explicativo.
+
+### [/generate-c4](./.claude/commands/generate-c4.md)
+
+Comando para gerar diagramas C4 a partir de Feature Design Documents (FDD). Invoca o agente c4-diagram-generator que analisa o FDD e cria diagramas PlantUML em múltiplos níveis (System Context, Container, Component, Code). Suporta especificação de pasta de output e opção para desabilitar geração de imagens PNG.
 
 ### [/update-readme](./.claude/commands/update-readme.md)
 
@@ -113,4 +151,4 @@ Sinta-se à vontade para adicionar novos prompts, exemplos ou comandos que possa
 
 ---
 
-**Última atualização:** 2025-11-16
+**Última atualização:** 2025-01-16
